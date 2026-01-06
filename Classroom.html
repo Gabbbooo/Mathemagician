@@ -17,8 +17,6 @@
             --border: #e2e8f0;
             --white: #ffffff;
             --bg: #f8fafc;
-            --yellow: #fde047;
-            --purple: #D26FED; 
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -31,21 +29,79 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
 
         /* Navbar */
-        .navbar { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); height: 64px; position: sticky; top: 0; z-index: 100; }
+        .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            height: 64px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-        .nav-content { display: flex; justify-content: space-between; align-items: center; height: 100%; }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
 
-        .logo { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; color: inherit; }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: inherit;
+        }
 
-        .logo-icon { background: var(--primary); color: var(--primary-light); padding: 8px; border-radius: 12px; border: 2px solid rgba(59, 130, 246, 0.2); display: flex; align-items: center; justify-content: center; }
+        .logo-icon {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 8px;
+            border-radius: 12px;
+            border: 2px solid rgba(59, 130, 246, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-        .logo-text { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -0.02em; }
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .profile-avatar {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--primary), #60a5fa);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
+        }
 
         /* Hero Section */
-        .hero { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); border-radius: 32px; padding: 4rem 3rem; color: white; margin-top: 2rem; position: relative; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25); }
+        .hero {
+            background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+            border-radius: 32px;
+            padding: 4rem 3rem;
+            color: white;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25);
+        }
 
         .hero-badge {
             display: inline-flex;
@@ -61,55 +117,170 @@
             backdrop-filter: blur(4px);
         }
 
-        .hero-badge .highlight { 
-            color: var(--yellow); 
-            font-weight: 700; 
+        .hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
         }
 
-        .hero h1 { font-family: 'Outfit', sans-serif; font-size: 3.5rem; font-weight: 700; margin-bottom: 1.25rem; line-height: 1.1; letter-spacing: -0.03em; }
+        .hero p {
+            font-size: 1.125rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 500px;
+            font-weight: 400;
+        }
 
-        .hero p { font-size: 1.125rem; color: rgba(255, 255, 255, 0.9); max-width: 500px; font-weight: 400; }
+        .cap-icon {
+            color: #fde047;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 8px;
+        }
 
         /* Search Box */
-        .search-container { max-width: 720px; margin: -2rem auto 4rem; position: relative; z-index: 20; padding: 0 1rem; }
+        .search-container {
+            max-width: 720px;
+            margin: -2rem auto 4rem;
+            position: relative;
+            z-index: 20;
+            padding: 0 1rem;
+        }
 
-        .search-box { background: white; padding: 0.5rem 1rem; border-radius: 20px; display: flex; align-items: center; gap: 1rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); border: 1px solid var(--border); transition: all 0.3s ease; }
+        .search-box {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
 
-        .search-box:focus-within { box-shadow: 0 25px 30px -5px rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.4); }
+        .search-box:focus-within {
+            box-shadow: 0 25px 30px -5px rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
 
-        .search-box input { border: none; width: 100%; height: 52px; font-size: 1.125rem; outline: none; background: transparent; }
+        .search-box input {
+            border: none;
+            width: 100%;
+            height: 52px;
+            font-size: 1.125rem;
+            outline: none;
+            background: transparent;
+        }
 
         .search-box i { color: var(--muted); }
 
         /* Lessons Section */
-        .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
 
-        .section-header h2 { font-family: 'Outfit', sans-serif; font-size: 1.75rem; font-weight: 700; }
+        .section-header h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
 
-        .view-all-btn { background: white; border: 1px solid var(--border); padding: 8px 18px; border-radius: 12px; font-weight: 600; font-size: 0.875rem; cursor: pointer; transition: all 0.2s; }
+        .view-all-btn {
+            background: white;
+            border: 1px solid var(--border);
+            padding: 8px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
 
-        .view-all-btn:hover { background: var(--bg); color: var(--primary); }
+        .view-all-btn:hover {
+            background: var(--bg);
+            color: var(--primary);
+        }
 
-        .lessons-grid { display: grid; gap: 1.25rem; }
+        .lessons-grid {
+            display: grid;
+            gap: 1.25rem;
+        }
 
-        .lesson-card { background: white; padding: 1.5rem; border-radius: 24px; border: 1px solid var(--border); display: flex; gap: 1.5rem; transition: all 0.3s ease; cursor: pointer; }
+        .lesson-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-        .lesson-card:hover { border-color: rgba(59, 130, 246, 0.3); transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04); }
+        .lesson-card:hover {
+            border-color: rgba(59, 130, 246, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04);
+        }
 
-        .lesson-icon { width: 64px; height: 64px; border-radius: 18px; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0; }
+        .lesson-icon {
+            width: 64px;
+            height: 64px;
+            background: #fef2f2;
+            border: 1px solid #fee2e2;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ef4444;
+            flex-shrink: 0;
+        }
 
-        .lesson-author, .lesson-by { color: var(--purple); font-weight: 600; }
+        .lesson-content h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
 
-        .lesson-content h3 { font-family: 'Outfit', sans-serif; font-size: 1.35rem; font-weight: 700; margin-bottom: 0.25rem; }
+        .lesson-meta {
+            color: var(--muted);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
 
-        .lesson-meta { color: var(--muted); font-size: 0.875rem; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 8px; }
+        .tags {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 1rem;
+        }
 
-        .tags { display: flex; gap: 6px; margin-bottom: 1rem; }
+        .badge {
+            background: #fef9c3;
+            color: #854d0e;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border: 1px solid #fef08a;
+        }
 
-        .badge { background: #fef9c3; color: #854d0e; padding: 4px 12px; border-radius: 8px; font-size: 0.75rem; font-weight: 700; border: 1px solid #fef08a; }
+        .lesson-desc {
+            font-size: 0.95rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
 
-        .lesson-desc { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
-
+        /* Mobile Styles */
         @media (max-width: 640px) {
             .hero { padding: 2.5rem 1.5rem; border-radius: 24px; }
             .hero h1 { font-size: 2.25rem; }
@@ -139,10 +310,10 @@
         <section class="hero">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i data-lucide="sparkles" data-stroke="#fde047" data-width="20" data-height="20"></i>
-                    <span class="highlight">Learn. Practice. Excel.</span>
+                    <i data-lucide="sparkles" style="width: 14px; height: 14px;"></i>
+                    <span>Learn. Practice. Excel.</span>
                 </div>
-                <h1>Welcome to Mathemagician<br> Classroom! 🎓</h1>
+                <h1>Welcome to <br> Mathemagician <i data-lucide="graduation-cap" class="cap-icon" style="width: 48px; height: 48px;"></i></h1>
                 <p>Step into a world where math comes alive! Explore interactive lessons designed to make learning mathematics fun and engaging.</p>
             </div>
         </section>
@@ -150,7 +321,7 @@
         <section class="search-container">
             <div class="search-box">
                 <i data-lucide="search"></i>
-                <input type="text" id="lessonSearch" placeholder="Search for lessons.">
+                <input type="text" id="lessonSearch" placeholder="Search for lessons...">
             </div>
         </section>
 
@@ -159,31 +330,38 @@
                 <h2>Most Popular</h2>
                 <button class="view-all-btn">View All</button>
             </div>
-            <div id="lessonsGrid" class="lessons-grid"></div>
+            <div id="lessonsGrid" class="lessons-grid">
+                <!-- Loaded by JS -->
+            </div>
         </section>
     </main>
 
     <script>
+        // Initialize Icons
         lucide.createIcons();
 
+        // Data
         const lessons = [
             {
-                title: "Continuity & Limits",
+                title: "Understanding Domain of Functions",
                 author: "Mathemagician",
                 duration: "45-60 min",
-                description: "Students explore the concepts of continuity and limits, evaluating whether functions are continuous at given points and calculating limits of polynomial, factored, and radical functions.",
-                tags: ["Functions", "Calculus"],
-                icon: "book-open",       
-                iconColor: "#10b981"    // green
+                description: "Students explore the concept of domain in functions, identifying valid input values and understanding restrictions in various function types.",
+                tags: ["Domain", "Functions", "Math Lessons"]
             },
             {
-                title: "Probability, Mean & Variance",
+                title: "Introduction to Quadratic Equations",
                 author: "Mathemagician",
-                duration: "45-60 min",
-                description: "Students learn to complete probability tables, calculate the mean, determine deviations from the mean, and compute variance, applying formulas to real examples for better understanding.",
-                tags: ["Statistics", "Probability"],
-                icon: "bar-chart-2",     
-                iconColor: "#E82A37"    // red
+                duration: "30-45 min",
+                description: "Learn the basics of quadratic equations, how to identify them, and methods for solving them including factoring.",
+                tags: ["Algebra", "Quadratics"]
+            },
+            {
+                title: "Geometric Sequences and Series",
+                author: "Mathemagician",
+                duration: "60 min",
+                description: "Dive into geometric patterns, understanding the common ratio, and calculating the sum of geometric series.",
+                tags: ["Geometry", "Sequences"]
             }
         ];
 
@@ -193,19 +371,15 @@
         function render(filter = "") {
             grid.innerHTML = "";
             const filtered = lessons.filter(l => l.title.toLowerCase().includes(filter.toLowerCase()));
-
+            
             filtered.forEach(lesson => {
                 const card = document.createElement('div');
                 card.className = 'lesson-card';
                 card.innerHTML = `
-                    <div class="lesson-icon" style="background: ${lesson.iconColor}; border-color: ${lesson.iconColor};">
-                        <i data-lucide="${lesson.icon}" style="color: white;"></i>
-                    </div>
+                    <div class="lesson-icon"><i data-lucide="book-open"></i></div>
                     <div class="lesson-content">
                         <h3>${lesson.title}</h3>
-                        <div class="lesson-meta">
-                            <span class="lesson-by">By</span> <span class="lesson-author">${lesson.author}</span> • ${lesson.duration} • Lesson
-                        </div>
+                        <div class="lesson-meta">By ${lesson.author} • ${lesson.duration} • Lesson</div>
                         <div class="tags">
                             ${lesson.tags.map(t => `<span class="badge">${t}</span>`).join('')}
                         </div>
@@ -222,4 +396,5 @@
     </script>
 </body>
 </html>
+
 
