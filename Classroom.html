@@ -194,9 +194,19 @@
             grid.innerHTML = "";
             const filtered = lessons.filter(l => l.title.toLowerCase().includes(filter.toLowerCase()));
 
-            filtered.forEach(lesson => {
+            filtered.forEach((lesson, index) => {
                 const card = document.createElement('div');
                 card.className = 'lesson-card';
+                
+                // Redirect first lesson to Bascal.html
+                card.onclick = () => {
+                    if(index === 0){
+                        window.location.href = 'Bascal.html';
+                    } else {
+                        alert('This lesson page is not yet available.');
+                    }
+                };
+
                 card.innerHTML = `
                     <div class="lesson-icon" style="background: ${lesson.iconColor}; border-color: ${lesson.iconColor};">
                         <i data-lucide="${lesson.icon}" style="color: white;"></i>
@@ -222,6 +232,4 @@
     </script>
 </body>
 </html>
-
-
 
