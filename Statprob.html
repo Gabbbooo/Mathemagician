@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathemagician | Probability, Mean & Variance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { primary: '#3b82f6', purple: '#D26FED', yellow: '#fde047' },                    fontFamily: { display: ['Outfit', 'sans-serif'], body: ['DM Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#F8FAFC] font-body text-[#0f172a] antialiased pb-24">
+    <nav class="w-full bg-transparent h-16">
+        <div class="container mx-auto px-4 h-full flex items-center max-w-4xl">
+            <a href="Classroom.html" class="p-2 rounded-full hover:bg-slate-100 transition-colors">
+                <i data-lucide="arrow-left" class="w-6 h-6 text-slate-600"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main class="container mx-auto max-w-4xl px-4 py-12">
+        <div class="text-center space-y-6 mb-12">
+            <h1 class="text-4xl md:text-5xl font-display font-bold text-slate-900 tracking-tight">Probability, Mean & Variance</h1>
+            <div class="flex justify-center gap-3">
+                <span class="bg-blue-50 text-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Data Science</span>
+                <span class="bg-blue-50 text-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Statistics</span>
+            </div>
+        </div>        <!-- Overview Section -->
+        <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-sm border border-slate-100 mb-8 overflow-hidden">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <h2 class="text-xl font-bold text-slate-900 flex items-center gap-3">
+                        <i data-lucide="book-open" class="w-5 h-5 text-primary"></i>
+                        Overview of the Lesson
+                    </h2>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3"><span class="font-bold text-slate-900">1.</span> <span class="text-slate-700 font-medium">Find missing probabilities</span></li>
+                        <li class="flex items-start gap-3"><span class="font-bold text-slate-900">2.</span> <span class="text-slate-700 font-medium">Compute the mean (expected value)</span></li>
+                        <li class="flex items-start gap-3"><span class="font-bold text-slate-900">3.</span> <span class="text-slate-700 font-medium">Determine deviations from the mean</span></li>
+                        <li class="flex items-start gap-3"><span class="font-bold text-slate-900">4.</span> <span class="text-slate-700 font-medium">Calculate variance and standard deviation</span></li>
+                    </ul>
+                </div>
+                <div class="bg-white border rounded-2xl overflow-hidden self-start">
+                    <table class="w-full text-center border-collapse">
+                        <thead class="bg-slate-50 border-b">
+                            <tr>
+                                <th class="p-3 border-r font-bold text-slate-900">x</th>
+                                <th class="p-3 border-r font-bold text-slate-900">P(x)</th>
+                                <th class="p-3 font-bold text-slate-900">x · P(x)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-slate-700 font-medium text-sm">
+                            <tr class="border-b"><td class="p-3 border-r">1</td><td class="p-3 border-r">0.2</td><td class="p-3">0.2</td></tr>
+                            <tr class="border-b"><td class="p-3 border-r">2</td><td class="p-3 border-r">0.5</td><td class="p-3">1.0</td></tr>
+                            <tr><td class="p-3 border-r">3</td><td class="p-3 border-r">0.3</td><td class="p-3">0.9</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="questions-container" class="space-y-8"></div>
+
+        <!-- Final Step Section -->
+        <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-sm border border-slate-100 my-8 space-y-6">
+            <h3 class="text-xl font-bold text-blue-900">Final Step: Variance and Standard Deviation</h3>
+            <div class="bg-slate-50/50 p-6 rounded-2xl border border-slate-100 space-y-6">
+                <p class="flex items-center gap-3 text-primary font-bold"><i data-lucide="calculator" class="w-6 h-6"></i> σ² = Σ(x - μ)² · P(x)</p>
+                <p class="text-slate-600 font-medium pl-9 text-sm">(1.21)(0.2) + (0.01)(0.5) + (1.21)(0.3)</p>
+                <p class="text-slate-600 font-medium pl-9 text-sm">0.242 + 0.005 + 0.363 = 0.61</p>
+                <div class="flex items-center gap-3 text-emerald-600 font-bold pl-9">
+                    <i data-lucide="check-circle-2" class="w-5 h-5"></i> Standard Deviation: σ = √0.61 ≈ 0.781
+                </div>
+            </div>
+        </div>
+
+        <!-- Lesson Summary -->
+        <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-sm border border-slate-100 mb-8">
+            <h2 class="text-xl font-bold text-blue-900 flex items-center gap-3 mb-8">
+                <i data-lucide="book-open" class="w-5 h-5 text-primary"></i>
+                Lesson Summary
+            </h2>
+            <div class="grid sm:grid-cols-2 gap-x-12 gap-y-4 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-blue-400"></i><span class="text-slate-700">Probability must always sum to 1</span></div>
+                <div class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-blue-400"></i><span class="text-slate-700">Mean tells the expected value</span></div>
+                <div class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-blue-400"></i><span class="text-slate-700">Variance measures spread</span></div>
+                <div class="flex items-center gap-3"><i data-lucide="check-circle" class="w-5 h-5 text-blue-400"></i><span class="text-slate-700">Std Dev measures typical distance from mean</span></div>
+            </div>
+        </div>
+
+        <!-- Recommended Video Section -->
+        <div class="space-y-6 mt-16 mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 px-2 flex items-center gap-2">
+                Recommended Video
+                <div class="flex-grow h-px bg-slate-200 ml-4"></div>
+            </h2>
+            <div class="p-4 bg-white border border-slate-100 rounded-[2rem] shadow-sm overflow-hidden">
+                <div class="aspect-video w-full overflow-hidden rounded-[1.5rem] bg-slate-100">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/watch?v=Q7oNH-8GdoQ&pp=ygUdcHJvYmFiaWxpdHkgbWVhbiBhbmQgdmFyaWFuY2U%3D" frameborder="0" allowfullscreen></iframe>                </div>
+                <div class="p-4 space-y-2 text-center">
+                    <h3 class="text-lg font-bold text-slate-900">Probability, Mean & Variance Introduction</h3>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const questions = [
+            { id: 1, title: "Question 1: Finding the Missing Probability", text: "Given: 0.2 + 0.5 + P(3) = 1. What is P(3)?", options: ["P(3) = 0.2", "P(3) = 0.3", "P(3) = 0.4"], correctAnswer: "P(3) = 0.3", explanation: "P(3) = 1 - (0.2 + 0.5) = 0.3" },
+            { id: 2, title: "Question 2: Finding the Mean (Expected Value)", text: "Formula: μ = Σx · P(x). For our table, what is μ?", options: ["μ = 2.0", "μ = 2.1", "μ = 2.2"], correctAnswer: "μ = 2.1", explanation: "0.2 + 1.0 + 0.9 = 2.1" },
+            { id: 3, title: "Question 3: Finding x - mean", text: "For x = 3, μ = 2.1. What is x - μ?", options: ["0.7", "0.9", "1.1"], correctAnswer: "0.9", explanation: "3 - 2.1 = 0.9" }
+        ];
+
+        let state = {};
+
+        function render() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = questions.map(q => {
+                const qState = state[q.id] || {};
+                return `
+                <div class="bg-white p-6 md:p-8 rounded-[2rem] shadow-sm border border-slate-100 space-y-8">
+                    <div class="text-slate-400 font-bold text-sm tracking-widest uppercase">Question ${q.id}</div>
+                    <h3 class="text-2xl font-display font-medium text-slate-900">${q.title}</h3>
+                    <p class="text-slate-600 font-medium">${q.text}</p>
+                    <div class="space-y-3">
+                        ${q.options.map(opt => `
+                            <button onclick="select(${q.id}, '${opt}')" class="w-full p-4 rounded-2xl border-2 text-left transition-all ${qState.selected === opt ? 'border-primary bg-blue-50/50' : 'border-slate-100 hover:border-slate-200'}">
+                                ${opt}
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
+                        <button onclick="check(${q.id})" class="w-full sm:w-auto bg-primary text-white rounded-2xl px-10 py-4 text-lg font-bold hover:bg-blue-600 disabled:opacity-50 transition-all shadow-lg shadow-blue-200" ${!qState.selected ? 'disabled' : ''}>
+                            Check Answer
+                        </button>
+                        ${qState.showResult ? `
+                            <div class="flex-grow p-4 rounded-2xl ${qState.isCorrect ? 'bg-emerald-50 text-emerald-700' : 'bg-rose-50 text-rose-700'} font-bold">
+                                ${qState.isCorrect ? 'Correct! ' : 'Incorrect. '} ${q.explanation}
+                            </div>
+                        ` : ''}
+                    </div>
+                </div>
+            `}).join('');
+            lucide.createIcons();
+        }
+
+        window.select = (id, opt) => { 
+            state[id] = { ...state[id], selected: opt, showResult: false }; 
+            render(); 
+        };
+
+        window.check = (id) => { 
+            const q = questions.find(q => q.id === id); 
+            const isCorrect = state[id].selected === q.correctAnswer;
+            state[id] = { ...state[id], showResult: true, isCorrect: isCorrect };
+            render();
+        };
+
+        render();
+    </script>
+</body>
+</html>
